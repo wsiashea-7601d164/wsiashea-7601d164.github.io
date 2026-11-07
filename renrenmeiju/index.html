@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>人人美剧-美剧推荐与追剧指南_热门美剧_经典美剧_美剧资讯</title>
+  <meta name="description" content="人人美剧专题页：汇聚热门美剧推荐、经典剧集解析、追剧指南与最新美剧资讯。从悬疑科幻到律政医疗，帮你快速找到值得追的美剧，了解每部剧的看点与更新动态。">
+  <meta name="keywords" content="人人美剧,美剧推荐,热门美剧,经典美剧,追剧指南">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231b1b2f'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23f0c75e' font-family='Arial'%3E美%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --bg:#f7f6f3;
+      --surface:#ffffff;
+      --ink:#1e1e24;
+      --muted:#6b6b76;
+      --line:#e7e4dd;
+      --accent:#c9a84c;
+      --accent-soft:#f5edd8;
+      --brand:#1b1b2f;
+      --brand2:#2e2e48;
+      --radius:14px;
+      --shadow:0 6px 24px rgba(27,27,47,.08);
+      --shadow-hover:0 14px 34px rgba(27,27,47,.14);
+      --maxw:1200px;
+      --font: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .sec{padding:52px 0}
+    .sec-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+    .sec-hd h2{font-size:26px;letter-spacing:.02em;position:relative;padding-left:16px}
+    .sec-hd h2::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;border-radius:3px;background:var(--accent)}
+    .sec-hd p{color:var(--muted);font-size:14px;max-width:620px}
+    .tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:#8a6d1f;border:1px solid #e9dcb8;margin-right:6px;margin-bottom:6px}
+    .tag.gray{background:#f0f0f2;color:#5a5a66;border-color:#e2e2e8}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:999px;background:var(--brand);color:#f5edd8;font-size:14px;font-weight:600;border:0;cursor:pointer;transition:.25s}
+    .btn:hover{background:#33334f;transform:translateY(-2px)}
+    .btn.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+    .btn.ghost:hover{background:var(--brand);color:#f5edd8}
+
+    /* 顶部导航 */
+    header.top{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:28px;height:66px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.04em}
+    .logo .mark{width:36px;height:36px;border-radius:10px;background:var(--brand);color:var(--accent);display:grid;place-items:center;font-size:18px;font-weight:900}
+    .nav ul{display:flex;gap:22px;font-size:15px;color:#3f3f4a;flex-wrap:wrap}
+    .nav ul a{padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+    .nav ul a:hover{border-color:var(--accent);color:var(--brand)}
+    .nav .nav-actions{margin-left:auto;display:flex;gap:12px;align-items:center}
+
+    /* Banner */
+    .hero{background:linear-gradient(120deg,#1b1b2f 0%,#2c2c48 55%,#3a3550 100%);color:#f3f1ea;padding:64px 0 58px;position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.18),transparent 70%)}
+    .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
+    .hero h1{font-size:44px;line-height:1.2;letter-spacing:.01em;margin-bottom:18px}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero p.lead{font-size:16px;color:#c9c6bd;max-width:620px;margin-bottom:26px}
+    .hero-search{display:flex;gap:0;max-width:540px;background:#fff;border-radius:999px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.28)}
+    .hero-search input{flex:1;border:0;padding:15px 22px;font-size:15px;outline:none;color:#1e1e24;background:#fff}
+    .hero-search button{border:0;background:var(--accent);color:#1b1b2f;font-weight:800;padding:0 28px;font-size:15px;cursor:pointer;transition:.2s}
+    .hero-search button:hover{background:#dbb95a}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .hero-tags a{font-size:13px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#e6e2d6;transition:.2s}
+    .hero-tags a:hover{background:var(--accent);color:#1b1b2f;border-color:var(--accent)}
+    .hero-art{background:linear-gradient(160deg,#2a2a42,#1f1f33);border:1px solid rgba(201,168,76,.25);border-radius:20px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+    .hero-art .mini{font-size:12px;letter-spacing:.22em;color:var(--accent);margin-bottom:8px}
+    .hero-art strong{display:block;font-size:22px;margin-bottom:6px}
+    .hero-art span{font-size:13px;color:#a9a6a0;display:block}
+    .hero-art .cell{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.12);font-size:14px;color:#d6d2c7}
+    .hero-art .cell:last-child{border-bottom:0}
+
+    /* 分类入口 */
+    .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .cat-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:14px;transition:.25s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+    .cat-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#d9c78f}
+    .cat-item .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;font-size:20px;color:#8a6d1f;flex-shrink:0}
+    .cat-item b{display:block;font-size:15px;margin-bottom:2px}
+    .cat-item span{font-size:12px;color:var(--muted)}
+
+    /* 热门推荐 */
+    .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .rec-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.03);transition:.28s;display:flex;flex-direction:column}
+    .rec-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);border-color:#e2d3a3}
+    .rec-cover{height:148px;display:grid;place-items:center;font-size:15px;font-weight:800;letter-spacing:.1em;color:#f5edd8;position:relative}
+    .rec-cover.c1{background:linear-gradient(135deg,#3a3a5c,#1f1f33)}
+    .rec-cover.c2{background:linear-gradient(135deg,#5a3e2b,#2e2118)}
+    .rec-cover.c3{background:linear-gradient(135deg,#1f3a4d,#16222b)}
+    .rec-cover.c4{background:linear-gradient(135deg,#4d2f3a,#2b1a21)}
+    .rec-cover.c5{background:linear-gradient(135deg,#2e4d3a,#1a2b21)}
+    .rec-cover.c6{background:linear-gradient(135deg,#3d3d2a,#242418)}
+    .rec-cover .badge{position:absolute;top:12px;left:12px;font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(0,0,0,.45);color:#f5edd8;letter-spacing:.04em;font-weight:600}
+    .rec-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+    .rec-body h3{font-size:17px;margin-bottom:7px}
+    .rec-body .tags{margin-bottom:8px}
+    .rec-body p{font-size:13.5px;color:#55555f;flex:1;margin-bottom:12px}
+    .rec-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+    .rec-meta b{color:var(--accent);font-weight:700}
+
+    /* 最新更新 列表 */
+    .update-list{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    .update-row{display:flex;align-items:center;gap:16px;padding:15px 22px;border-bottom:1px solid #f1efe9;font-size:14px;transition:.2s}
+    .update-row:last-child{border-bottom:0}
+    .update-row:hover{background:#fbfaf6}
+    .update-row .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+    .update-row .name{font-weight:700;min-width:150px}
+    .update-row .desc{color:#5a5a66;flex:1}
+    .update-row .time{color:#999;font-size:12px;white-space:nowrap}
+
+    /* 深度解析 */
+    .deep-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:34px}
+    .deep-body h3{font-size:19px;margin:24px 0 10px;padding-left:12px;border-left:4px solid var(--accent)}
+    .deep-body p{font-size:15px;color:#3f3f4a;margin-bottom:14px}
+    .deep-aside{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;height:fit-content}
+    .deep-aside h4{font-size:16px;margin-bottom:14px}
+    .rank-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+    .rank-item:last-child{border-bottom:0}
+    .rank-no{width:24px;height:24px;border-radius:8px;background:var(--accent-soft);color:#8a6d1f;display:grid;place-items:center;font-size:12px;font-weight:800;flex-shrink:0}
+    .rank-item b{font-weight:600;flex:1}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .faq-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;transition:.2s}
+    .faq-card:hover{border-color:#d9c78f;box-shadow:var(--shadow)}
+    .faq-card h4{font-size:15.5px;margin-bottom:8px;color:var(--brand)}
+    .faq-card p{font-size:13.5px;color:#55555f}
+
+    /* 评论 */
+    .comment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .cmt{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+    .cmt-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#8a6d1f);display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800;flex-shrink:0}
+    .cmt-hd b{font-size:13.5px}
+    .cmt-hd time{font-size:11.5px;color:#aaa}
+    .cmt p{font-size:13.5px;color:#45454f}
+
+    /* 资讯 */
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .news-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.25s}
+    .news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+    .news-card time{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.04em}
+    .news-card h4{font-size:16px;margin:8px 0 8px;line-height:1.5}
+    .news-card p{font-size:13.5px;color:#55555f}
+
+    /* 订阅 */
+    .sub-band{background:linear-gradient(120deg,#1b1b2f,#2e2e48);border-radius:20px;padding:42px 44px;color:#f3f1ea;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+    .sub-band h2{font-size:24px;margin-bottom:6px}
+    .sub-band p{color:#b9b5aa;font-size:14px}
+    .sub-form{display:flex;background:#fff;border-radius:999px;overflow:hidden;min-width:320px}
+    .sub-form input{flex:1;border:0;padding:14px 20px;font-size:14px;outline:none}
+    .sub-form button{border:0;background:var(--accent);color:#1b1b2f;font-weight:800;padding:0 24px;cursor:pointer}
+
+    /* 页脚 */
+    footer{background:#15151f;color:#a9a6a0;padding:52px 0 28px;margin-top:20px}
+    .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+    .foot-grid h5{color:#f3f1ea;font-size:15px;margin-bottom:14px}
+    .foot-grid a{display:block;font-size:13.5px;margin-bottom:9px;color:#a9a6a0;transition:.2s}
+    .foot-grid a:hover{color:var(--accent)}
+    .foot-bottom{border-top:1px solid #2a2a38;padding-top:22px;font-size:12.5px;color:#77747a;line-height:1.9}
+    .foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:#f3f1ea;margin-bottom:12px}
+    .foot-brand .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#1b1b2f;display:grid;place-items:center;font-size:16px;font-weight:900}
+
+    /* 响应式 */
+    @media(max-width:980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .hero-art{display:none}
+      .cat-grid{grid-template-columns:repeat(2,1fr)}
+      .rec-grid{grid-template-columns:repeat(2,1fr)}
+      .deep-grid{grid-template-columns:1fr}
+      .news-grid{grid-template-columns:repeat(2,1fr)}
+      .foot-grid{grid-template-columns:1fr 1fr}
+      .faq-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .wrap{padding:0 16px}
+      .hero h1{font-size:32px}
+      .nav ul{display:none}
+      .nav .nav-actions{display:none}
+      .cat-grid{grid-template-columns:1fr 1fr}
+      .rec-grid{grid-template-columns:1fr}
+      .news-grid{grid-template-columns:1fr}
+      .comment-grid{grid-template-columns:1fr}
+      .update-row{flex-wrap:wrap;gap:6px}
+      .update-row .name{min-width:100%}
+      .sub-band{padding:28px 22px}
+      .sub-form{min-width:100%}
+      .foot-grid{grid-template-columns:1fr}
+      .sec{padding:36px 0}
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="top">
+  <div class="wrap nav">
+    <a href="/#hero" class="logo"><span class="mark">美</span>人人美剧</a>
+    <ul>
+      <li><a href="/#hot-rec">热门推荐</a></li>
+      <li><a href="/#latest">最新更新</a></li>
+      <li><a href="/#deep">深度解析</a></li>
+      <li><a href="/#category">分类导航</a></li>
+      <li><a href="/#faq">常见问题</a></li>
+      <li><a href="/#comments">剧迷评论</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/#subscribe" class="btn ghost" style="padding:8px 18px;font-size:13px">订阅追剧</a>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏 Banner -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <h1>人人美剧 · 找到下一部<em>值得通宵</em>的好剧</h1>
+      <p class="lead">从悬疑烧脑到律政职场，从经典老剧到当季新番。人人美剧为你梳理每部剧的看点、节奏与适合人群，让选剧不再靠运气。</p>
+      <div class="hero-search">
+        <input type="text" placeholder="搜索剧名、演员、类型，比如「继承之战」">
+        <button>搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#hot-rec">悬疑烧脑</a>
+        <a href="/#hot-rec">律政职场</a>
+        <a href="/#hot-rec">科幻史诗</a>
+        <a href="/#hot-rec">黑色喜剧</a>
+        <a href="/#hot-rec">医疗纪实</a>
+        <a href="/#hot-rec">古典名著改编</a>
+        <a href="/#hot-rec">近年高分</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="mini">EDITOR'S PICK</div>
+      <strong>本周追剧清单</strong>
+      <span>按更新节奏与口碑筛选</span>
+      <div style="margin-top:16px">
+        <div class="cell"><span>剧情向首选</span><b>继承之战</b></div>
+        <div class="cell"><span>悬疑烧脑</span><b>人生切割术</b></div>
+        <div class="cell"><span>轻喜剧解压</span><b>熊家餐馆</b></div>
+        <div class="cell"><span>经典重温</span><b>白宫风云</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<section class="sec" id="category">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>按口味选剧 · 分类入口</h2>
+      <p>人人美剧把剧集按题材、节奏和观看场景做了分类，方便你按当下心情快速定位。</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-item" href="/#hot-rec"><span class="ic">🔍</span><span><b>悬疑烧脑</b><span>反转、推理、心理战</span></span></a>
+      <a class="cat-item" href="/#hot-rec"><span class="ic">⚖️</span><span><b>律政职场</b><span>法庭、谈判、办公室政治</span></span></a>
+      <a class="cat-item" href="/#hot-rec"><span class="ic">🚀</span><span><b>科幻史诗</b><span>太空、末世、未来社会</span></span></a>
+      <a class="cat-item" href="/#hot-rec"><span class="ic">😂</span><span><b>黑色喜剧</b><span>荒诞、冷幽默、短平快</span></span></a>
+      <a class="cat-item" href="/#hot-rec"><span class="ic">🏥</span><span><b>医疗纪实</b><span>急诊、病例、人性考验</span></span></a>
+      <a class="cat-item" href="/#hot-rec"><span class="ic">🏰</span><span><b>古典改编</b><span>名著、历史、服化道</span></span></a>
+      <a class="cat-item" href="/#latest"><span class="ic">📅</span><span><b>当季新剧</b><span>正在更新、首播追踪</span></span></a>
+      <a class="cat-item" href="/#deep"><span class="ic">🏆</span><span><b>高分口碑</b><span>评分稳定、剧迷热议</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 热门推荐 -->
+<section class="sec" id="hot-rec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>人人美剧 · 热门推荐</h2>
+      <p>以下推荐结合近年口碑、讨论热度与观看门槛，适合不同追剧习惯的人。</p>
+    </div>
+    <div class="rec-grid">
+
+      <article class="rec-card">
+        <div class="rec-cover c1">悬疑 · 心理<span class="badge">高分烧脑</span></div>
+        <div class="rec-body">
+          <h3>人生切割术</h3>
+          <div class="tags"><span class="tag">职场异化</span><span class="tag">记忆分割</span></div>
+          <p>把工作与生活彻底切割的设定，越看越像现实寓言。节奏冷峻，细节伏笔密集，适合喜欢边看边推理的观众。</p>
+          <div class="rec-meta"><span>更新状态：第二季已完结</span><b>9.1 分</b></div>
+        </div>
+      </article>
+
+      <article class="rec-card">
+        <div class="rec-cover c2">家族 · 权谋<span class="badge">口碑神作</span></div>
+        <div class="rec-body">
+          <h3>继承之战</h3>
+          <div class="tags"><span class="tag">豪门内斗</span><span class="tag">台词锋利</span></div>
+          <p>每一场对话都像刀光剑影。看似讲媒体帝国接班，实际讲的是权力如何腐蚀亲密关系，剧迷讨论度长期居高不下。</p>
+          <div class="rec-meta"><span>全四季完结</span><b>9.4 分</b></div>
+        </div>
+      </article>
+
+      <article class="rec-card">
+        <div class="rec-cover c3">科幻 · 太空<span class="badge">硬核推荐</span></div>
+        <div class="rec-body">
+          <h3>苍穹浩瀚</h3>
+          <div class="tags"><span class="tag">太空歌剧</span><span class="tag">政治博弈</span></div>
+          <p>在太阳系殖民背景下展开的权谋与冒险，硬科幻细节扎实，人物群像耐看，是近年科幻剧迷绕不开的一部。</p>
+          <div class="rec-meta"><span>全六季完结</span><b>8.9 分</b></div>
+        </div>
+      </article>
+
+      <article class="rec-card">
+        <div class="rec-cover c4">喜剧 · 生活<span class="badge">解压首选</span></div>
+        <div class="rec-body">
+          <h3>熊家餐馆</h3>
+          <div class="tags"><span class="tag">厨房群像</span><span class="tag">快节奏</span></div>
+          <p>一家小餐馆的日常被拍出了竞技体育般的紧张感。台词密集、情绪真实，单集短，适合下班后连刷。</p>
+          <div class="rec-meta"><span>更新中：第四季</span><b>8.7 分</b></div>
+        </div>
+      </article>
+
+      <article class="rec-card">
+        <div class="rec-cover c5">律政 · 职场<span class="badge">经典重温</span></div>
+        <div class="rec-body">
+          <h3>傲骨贤妻</h3>
+          <div class="tags"><span class="tag">法庭攻防</span><span class="tag">女性成长</span></div>
+          <p>从家庭主妇重返职场的律师故事，案件密度高，角色弧光完整。想入坑律政剧，这部常被剧迷列进必看清单。</p>
+          <div class="rec-meta"><span>全七季完结</span><b>9.0 分</b></div>
+        </div>
+      </article>
+
+      <article class="rec-card">
+        <div class="rec-cover c6">古典 · 历史<span class="badge">服化道佳</span></div>
+        <div class="rec-body">
+          <h3>王冠</h3>
+          <div class="tags"><span class="tag">王室叙事</span><span class="tag">年代质感</span></div>
+          <p>用每季十年的跨度讲王室与时代变迁，画面考究，配角出彩。适合喜欢历史氛围与细腻人物关系的观众。</p>
+          <div class="rec-meta"><span>全六季完结</span><b>8.8 分</b></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 最新更新 -->
+<section class="sec" id="latest">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>最新更新 · 追剧动态</h2>
+      <p>当前时间为 2026 年 11 月 7 日，以下为近期剧集更新与排播动态汇总。</p>
+    </div>
+    <div class="update-list">
+      <div class="update-row"><span class="dot"></span><span class="name">熊家餐馆</span><span class="desc">第四季第 6 集已上线，厨房线迎来新成员</span><span class="time">11-07</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">人生切割术</span><span class="desc">主创访谈放出，第三季拍摄计划进入日程</span><span class="time">11-06</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">白宫风云</span><span class="desc">经典重制版上线流媒体，画质修复引剧迷讨论</span><span class="time">11-05</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">苍穹浩瀚</span><span class="desc">衍生剧开发中，聚焦前传时期的小行星带</span><span class="time">11-04</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">继承之战</span><span class="desc">主创新项目官宣，仍为家族题材黑色剧集</span><span class="time">11-03</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">傲骨贤妻</span><span class="desc">衍生剧新季定档，律政线回归芝加哥</span><span class="time">11-02</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">王冠</span><span class="desc">幕后纪录片上线，讲述服化道还原过程</span><span class="time">11-01</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">怪奇物语</span><span class="desc">最终季预告释出，播出时间进入倒计时</span><span class="time">10-31</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">最后生还者</span><span class="desc">第三季剧本完成，选角消息陆续公开</span><span class="time">10-30</span></div>
+      <div class="update-row"><span class="dot"></span><span class="name">小学风云</span><span class="desc">新季开播，伪纪录片风格继续保留</span><span class="time">10-29</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 深度解析 -->
+<section class="sec" id="deep">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>人人美剧 · 深度解析</h2>
+      <p>为什么有些剧一集入坑，有些剧需要熬过前三集？从类型、节奏与人物塑造三个角度拆解。</p>
+    </div>
+    <div class="deep-grid">
+      <div class="deep-body">
+        <p>人人美剧这个专题，想解决的核心问题并不是“哪部剧评分最高”，而是“哪部剧适合现在的你”。美剧的类型分化非常细，悬疑、律政、科幻、喜剧、历史改编各自的观看节奏差异很大。如果只看评分，很容易出现“高分但看不进去”的挫败感。</p>
+        <h3>类型决定观看门槛</h3>
+        <p>悬疑烧脑类通常依赖信息差和伏笔回收，前两集往往在铺设定，比如《人生切割术》用记忆分割的概念搭建世界观，第一遍看容易忽略办公室走廊的细节。律政职场剧则更依赖案件密度与角色关系，像《傲骨贤妻》每集一个案件，主线藏在办公室政治里，适合喜欢连续追更的观众。科幻史诗对世界观设定的要求更高，《苍穹浩瀚》前几集需要记住三方势力的关系，熬过去之后会非常上头。</p>
+        <h3>节奏感与单集结构</h3>
+        <p>近年美剧的单集时长明显分化。喜剧类普遍在 25 到 35 分钟，比如《熊家餐馆》单集短、情绪密度高，适合下班后连刷两三集；而《继承之战》单集近一小时，台词信息量大，更适合安静状态下细看。人人美剧在推荐时会把单集时长与更新频率一起标出来，就是为了让追剧安排更现实。</p>
+        <h3>人物弧光比反转更耐看</h3>
+        <p>很多剧迷搜索“人人美剧”时，其实是想找人物塑造扎实的剧。真正能让人记住的美剧，往往不是反转最多，而是人物变化最可信。《王冠》里每换一次演员，都是一次人物阶段的重新解读；《傲骨贤妻》里主角从被动到主动的职业选择，也贯穿了整部剧。这类剧适合慢慢看，不适合倍速。</p>
+        <h3>同类比较与避坑</h3>
+        <p>如果你喜欢《继承之战》的台词锋利感，可以关注同类型的家族题材；如果更在意悬疑解谜，那么《人生切割术》这类高概念剧会更对味。人人美剧在推荐卡片里会标注“观看门槛”和“适合人群”，也是希望减少选剧试错成本。</p>
+        <p>最后，追剧这件事没有统一标准。有人喜欢等完结一口气看完，有人习惯每周追更。人人美剧的内容编排尽量兼顾这两种习惯：热门推荐偏完结口碑，最新更新则跟进排播动态，让不同节奏的观众都有入口。</p>
+      </div>
+      <aside class="deep-aside">
+        <h4>剧迷常搜关键词</h4>
+        <div class="rank-item"><span class="rank-no">1</span><b>人人美剧 高分推荐</b></div>
+        <div class="rank-item"><span class="rank-no">2</span><b>悬疑美剧 烧脑</b></div>
+        <div class="rank-item"><span class="rank-no">3</span><b>经典律政剧 必看</b></div>
+        <div class="rank-item"><span class="rank-no">4</span><b>美剧 单集短 解压</b></div>
+        <div class="rank-item"><span class="rank-no">5</span><b>科幻美剧 世界观</b></div>
+        <div class="rank-item"><span class="rank-no">6</span><b>家族权谋 台词好</b></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>常见问题 · 选剧答疑</h2>
+      <p>整理剧迷在人人美剧页面中最常问到的几个问题，给出具体建议。</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h4>第一次看美剧，从哪部开始比较合适？</h4>
+        <p>如果不想一上来就被复杂世界观劝退，可以先从单集短、节奏轻快的喜剧入手，比如《熊家餐馆》或《小学风云》。想试悬疑可以从《人生切割术》第一季开始，前两集耐心看设定，后面会越来越清晰。人人美剧建议按“单集时长 + 类型”两步筛选。</p>
+      </div>
+      <div class="faq-card">
+        <h4>人人美剧里的推荐是依据什么排的？</h4>
+        <p>主要结合三个维度：近年剧迷讨论热度、评分稳定性、观看门槛。不会只按评分排，因为有些高分剧门槛较高。页面里也会标注“适合人群”和“更新状态”，方便你判断是等完结还是追更。</p>
+      </div>
+      <div class="faq-card">
+        <h4>《继承之战》和《王冠》有什么不同？</h4>
+        <p>两部都有家族与权力，但气质完全不同。《继承之战》台词密集、冲突直接，偏黑色讽刺；《王冠》更偏年代叙事和人物内心，节奏舒缓。喜欢锋利对话选前者，喜欢历史氛围和服化道选后者。</p>
+      </div>
+      <div class="faq-card">
+        <h4>想找类似《苍穹浩瀚》的科幻剧，有什么方向？</h4>
+        <p>可以关注“太空歌剧 + 政治博弈”这个组合。人人美剧的分类入口里把科幻史诗单独列出，重点看世界观完整度与人物群像。如果更在意硬核细节，可以优先选有原著基础的改编剧；如果更在意节奏，可以选单集冲突更强的作品。</p>
+      </div>
+      <div class="faq-card">
+        <h4>追更剧和完结剧怎么选？</h4>
+        <p>追更适合喜欢讨论氛围的观众，每周更新后有话题可聊，但等待周期长。完结剧适合一口气看完，情绪连贯。人人美剧在最新更新区标注了排播动态，热门推荐区以完结口碑剧为主，两种需求都能覆盖。</p>
+      </div>
+      <div class="faq-card">
+        <h4>页面里的评分是实时更新的吗？</h4>
+        <p>评分是编辑根据近期口碑整理的参考值，并非实时接口，主要用于横向比较。具体单集表现仍建议结合剧迷评论一起看。人人美剧的评论区也会保留不同意见，方便你判断一部剧是否合自己口味。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 用户评论 -->
+<section class="sec" id="comments">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>剧迷评论 · 真实讨论</h2>
+      <p>来自人人美剧页面的近期评论，观点多样，有推荐也有冷静吐槽。</p>
+    </div>
+    <div class="comment-grid">
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">林</span><b>林间有风</b><time>11-07</time></div><p>《人生切割术》第二季看完又回去重刷第一季，细节真的多。人人美剧这个页面分类挺清楚，省得我到处翻。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">M</span><b>Momo追剧</b><time>11-06</time></div><p>《熊家餐馆》第四季还是那个味儿，厨房戏太紧张了。就是单集太短，一不留神就刷完了。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">老</span><b>老白看片</b><time>11-05</time></div><p>《继承之战》台词是真狠，但前两集我差点弃了，人物太多。建议新观众先看人物关系再入坑。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">C</span><b>CinemaCat</b><time>11-05</time></div><p>人人美剧的推荐里终于不是清一色高分剧了，有些剧评分一般但看着舒服，这种推荐更真实。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">小</span><b>小满不剧荒</b><time>11-04</time></div><p>《苍穹浩瀚》前几集确实有点闷，撑过去就好了。希望页面多标一下每部剧的观看门槛。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">K</span><b>Kira在追剧</b><time>11-03</time></div><p>《傲骨贤妻》真的是律政剧白月光，案件和主线平衡得好。人人美剧把它列进经典重温很合适。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">阿</span><b>阿北</b><time>11-03</time></div><p>《王冠》服化道没得说，但后面几季节奏偏慢，适合慢慢看，不适合想找强情节的观众。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">D</span><b>Daniel_27</b><time>11-02</time></div><p>最新更新那块挺实用，能看到哪些剧在更。就是希望多加一点播出平台的提示，有时候找不到片源。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">桃</span><b>桃子汽水</b><time>11-01</time></div><p>喜剧分类里推荐《小学风云》，真的很下饭，伪纪录片风格很轻松。人人美剧多推点这种短剧吧。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">Z</span><b>Zoe不熬夜</b><time>10-31</time></div><p>评论区比正文还好看，大家口味差好多。不过这样才正常，一部剧不可能所有人都喜欢。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">路</span><b>路边社剧评</b><time>10-30</time></div><p>深度解析那段讲单集时长和节奏，挺有共鸣。追剧确实要看自己时间，别硬追。</p></div>
+      <div class="cmt"><div class="cmt-hd"><span class="avatar">H</span><b>Hana看美剧</b><time>10-29</time></div><p>希望人人美剧后面能做个“完结剧一口气看”的清单，追更太累了，想找能直接刷完的。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 资讯 -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-hd">
+      <h2>相关资讯 · 剧集动态</h2>
+      <p>近期与美剧相关的新消息、制作动态与观看参考。</p>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <time>2026-11-07</time>
+        <h4>《熊家餐馆》第四季厨房线迎来新角色，剧迷猜测后续走向</h4>
+        <p>新一集上线后，关于新成员对后厨节奏的影响讨论升温。人人美剧整理了本季前六集的关键转折点。</p>
+      </article>
+      <article class="news-card">
+        <time>2026-11-06</time>
+        <h4>悬疑剧回潮：高概念设定为何再次受到剧迷关注</h4>
+        <p>从《人生切割术》到近期新剧，高概念悬疑依旧吃香。分析认为，单集信息密度和讨论空间是关键。</p>
+      </article>
+      <article class="news-card">
+        <time>2026-11-05</time>
+        <h4>经典律政剧重制上线，老剧迷与新观众评价分化</h4>
+        <p>画质修复与配乐调整引发讨论。人人美剧观察到，新观众更关注案件节奏，老剧迷则在意的细节还原。</p>
+      </article>
+      <article class="news-card">
+        <time>2026-11-03</time>
+        <h4>科幻史诗衍生剧进入开发阶段，时间线设定成焦点</h4>
+        <p>围绕前传时期的设定，剧迷最关心的是世界观是否与正传保持一致。人人美剧将持续跟进制作动态。</p>
+      </article>
+      <article class="news-card">
+        <time>2026-11-02</time>
+        <h4>家族权谋题材新项目官宣，主创回归引发期待</h4>
+        <p>同类题材近年热度稳定，台词质量与人物塑造仍是观众最看重的部分。</p>
+      </article>
+      <article class="news-card">
+        <time>2026-10-31</time>
+        <h4>年度追剧清单更新：完结剧与当季新剧如何搭配</h4>
+        <p>人人美剧建议按“一部长剧 + 一部短剧”组合安排，避免追更空窗期。页面分类入口已同步更新。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅 -->
+<section class="sec" id="subscribe">
+  <div class="wrap">
+    <div class="sub-band">
+      <div>
+        <h2>订阅人人美剧 · 每周追剧提醒</h2>
+        <p>留下邮箱，获取当周更新清单与口碑新剧推荐，不频繁打扰。</p>
+      </div>
+      <div class="sub-form">
+        <input type="email" placeholder="输入你的邮箱">
+        <button>订阅</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="mark">美</span>人人美剧</div>
+        <p style="font-size:13.5px;line-height:1.9;color:#8f8c8a">人人美剧是一个面向剧迷的内容专题页，提供剧集推荐、分类导航、更新动态与观剧讨论。页面内容为编辑整理与模拟数据，仅供选剧参考。</p>
+      </div>
+      <div>
+        <h5>内容导航</h5>
+        <a href="/#hot-rec">热门推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#category">分类入口</a>
+      </div>
+      <div>
+        <h5>剧迷讨论</h5>
+        <a href="/#comments">用户评论</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#subscribe">订阅提醒</a>
+      </div>
+      <div>
+        <h5>友情链接</h5>
+        <a href="/#hero">剧集资料库</a>
+        <a href="/#hero">追剧日历</a>
+        <a href="/#hero">配音与字幕</a>
+        <a href="/#hero">影视讨论区</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 人人美剧 · 内容专题页 | 本站不提供视频在线播放，仅做剧集信息整理与推荐参考。</p>
+      <p>免责声明：页面内评分、热度与更新状态为模拟展示数据，不构成观看决策的唯一依据。剧集版权归原制作方与播出平台所有。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+      </html>
